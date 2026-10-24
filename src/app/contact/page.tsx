@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { getPageMetadata } from "../seo.config";
 import ContactForm from "../components/contact/ContactForm";
+
+export const metadata = getPageMetadata("contact");
 
 export default function Contact() {
   return (

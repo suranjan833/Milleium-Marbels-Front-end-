@@ -1,4 +1,7 @@
+import { getPageMetadata } from "../seo.config";
 import AboutHero from "../components/about/AboutHero";
+
+export const metadata = getPageMetadata("about");
 import History from "../components/about/History";
 import Mission from "../components/about/Mission";
 import Vision from "../components/about/Vision";

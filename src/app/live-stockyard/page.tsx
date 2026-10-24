@@ -1,5 +1,8 @@
 import { Suspense } from "react";
+import { getPageMetadata } from "../seo.config";
 import LiveStockyardClient from "./LiveStockyardClient";
+
+export const metadata = getPageMetadata("liveStockyard");
 
 export default function LiveStockyardPage() {
   return (

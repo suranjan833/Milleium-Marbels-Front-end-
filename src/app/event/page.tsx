@@ -1,5 +1,8 @@
 import { Suspense } from "react";
+import { getPageMetadata } from "../seo.config";
 import EventClient from "./EventClient";
+
+export const metadata = getPageMetadata("event");
 
 export default function EventPage() {
   return (

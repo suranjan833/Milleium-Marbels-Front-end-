@@ -1,5 +1,8 @@
 import { Suspense } from "react";
+import { getPageMetadata } from "../seo.config";
 import BlogClient from "./BlogClient";
+
+export const metadata = getPageMetadata("blog");
 
 export default function BlogPage() {
   return (

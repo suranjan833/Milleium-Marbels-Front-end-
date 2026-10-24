@@ -1,4 +1,7 @@
+import { getPageMetadata } from "../seo.config";
 import AwardClient from "./AwardClient";
+
+export const metadata = getPageMetadata("award");
 
 export default function AwardPage() {
   return (

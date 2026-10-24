@@ -6,6 +6,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import { SITE_URL } from "./seo.config";
+
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
@@ -26,8 +28,12 @@ const gracela = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Millenium Marbles",
-  description: "Top Imported Italian Marbles & Stones in India",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Premium Marble | Natural Stone Supplier in India — Millenium Marbles",
+    template: "%s",
+  },
+  description: "Explore premium marble, imported natural stones, granite, onyx and travertine at Millenium Marbles. Discover distinctive stone collections for luxury spaces.",
   verification: {
     google: "zE2V693J7NudAkY0HA9OPZ0g3iZNRsQApkSlajkv1DM",
   },

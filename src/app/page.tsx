@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { getPageMetadata } from "./seo.config";
+
+export const metadata = getPageMetadata("home");
 import mainsectionimg from "../../public/assets/homepage/0001.jpg";
 import mainsectionimgmobile from "../../public/assets/homepage/0001-mobile.jpg";
 import sectiontwobg from "../../public/assets/homepage/new-ng-mount-scaled-1.jpg";

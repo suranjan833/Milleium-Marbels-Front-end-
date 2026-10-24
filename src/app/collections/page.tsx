@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { getPageMetadata } from "../seo.config";
 import { COLLECTIONS_DATA } from "../components/collections/collectionsData";
 import CollectionCard from "../components/collections/CollectionCard";
+
+export const metadata = getPageMetadata("collections");
 
 export default function Collections() {
   return (

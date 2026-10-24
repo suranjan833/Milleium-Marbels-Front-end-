@@ -1,12 +1,55 @@
 import React from "react";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { fetchBlogArticleBySlug } from "../../Utils/api";
 import RichText from "@/app/components/common/RichText";
 import type { SidebarRecentPost } from "../blog.types";
 import Image from "next/image";
+import { SITE_NAME, SITE_URL } from "../../seo.config";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  try {
+    const post = await fetchBlogArticleBySlug(slug);
+    const title = `${post.title} — Millenium Marbles`;
+    const description =
+      post.excerpt ||
+      `Read ${post.title} on Millenium Marbles. Discover insights on luxury marble and natural stones.`;
+    const imageUrl = post.hero_image
+      ? post.hero_image.startsWith("http")
+        ? post.hero_image
+        : `${SITE_URL}${post.hero_image}`
+      : `${SITE_URL}/assets/homepage/0001.jpg`;
+    const url = `${SITE_URL}/blog/${slug}`;
+
+    return {
+      title,
+      description,
+      alternates: { canonical: url },
+      openGraph: {
+        title,
+        description,
+        url,
+        siteName: SITE_NAME,
+        type: "article",
+        images: [{ url: imageUrl, alt: post.title }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [imageUrl],
+      },
+    };
+  } catch {
+    return {
+      title: "Blog Article — Millenium Marbles",
+    };
+  }
 }
 
 export default async function BlogDetailsPage({ params }: PageProps) {

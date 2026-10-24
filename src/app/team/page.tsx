@@ -1,4 +1,7 @@
+import { getPageMetadata } from "../seo.config";
 import TeamHero from "../components/team/TeamHero";
+
+export const metadata = getPageMetadata("team");
 import TeamHistory from "../components/team/TeamHistory";
 import TeamImage from "../components/team/TeamImage";
 
