@@ -1,0 +1,141 @@
+.homepage-slider-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage-swiper {
+  width: 100%;
+}
+
+.slide-image-container {
+  width: 100%;
+  position: relative;
+}
+
+.slide-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================
+   Navigation Buttons
+========================= */
+
+.homepage-slider-wrapper .swiper-button-next,
+.homepage-slider-wrapper .swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  color: #ffffff;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    opacity 0.35s ease;
+}
+
+/* Hover Effect */
+
+.homepage-slider-wrapper .swiper-button-next:hover,
+.homepage-slider-wrapper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-50%) scale(1.12);
+}
+
+/* Arrow Size */
+
+.homepage-slider-wrapper .swiper-button-next::after,
+.homepage-slider-wrapper .swiper-button-prev::after {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Desktop Position */
+
+.homepage-slider-wrapper .swiper-button-next {
+  right: 35px;
+}
+
+.homepage-slider-wrapper .swiper-button-prev {
+  left: 35px;
+}
+
+/* =========================
+        Tablet
+========================= */
+
+@media (max-width: 1024px) {
+  .homepage-slider-wrapper .swiper-button-next,
+  .homepage-slider-wrapper .swiper-button-prev {
+    width: 38px;
+    height: 38px;
+  }
+
+  .homepage-slider-wrapper .swiper-button-next {
+    right: 20px;
+  }
+
+  .homepage-slider-wrapper .swiper-button-prev {
+    left: 20px;
+  }
+}
+
+/* =========================
+        Mobile
+========================= */
+
+@media (max-width: 768px) {
+  .homepage-slider-wrapper .swiper-button-next,
+  .homepage-slider-wrapper .swiper-button-prev {
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+  .homepage-slider-wrapper .swiper-button-next {
+    right: 12px;
+  }
+
+  .homepage-slider-wrapper .swiper-button-prev {
+    left: 12px;
+  }
+
+  .homepage-slider-wrapper .swiper-button-next::after,
+  .homepage-slider-wrapper .swiper-button-prev::after {
+    font-size: 10px;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+  .homepage-slider-wrapper .swiper-button-next,
+  .homepage-slider-wrapper .swiper-button-prev {
+    width: 26px;
+    height: 26px;
+  }
+
+  .homepage-slider-wrapper .swiper-button-next {
+    right: 8px;
+  }
+
+  .homepage-slider-wrapper .swiper-button-prev {
+    left: 8px;
+  }
+
+  .homepage-slider-wrapper .swiper-button-next::after,
+  .homepage-slider-wrapper .swiper-button-prev::after {
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===========================
+     COLORS (Functional)
+  ============================ */
+  --color-primary: #72B2FF;
+  --color-secondary: #4b4b4b;
+  --color-accent: #b08a4f;
+  --color-background: #101010;
+  --color-surface: #ffffff;
+  --color-border: #e8e4de;
+  --color-heading: #1c1c1c;
+  --color-muted: #8a8a8a;
+
+  /* ===========================
+     COLORS (Semantic — SKILL.md)
+  ============================ */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #535353;
+  --color-text-tertiary: #dcdcdc;
+  --color-text-inverse: #d0d0d0;
+  --color-surface-base: #000000;
+  --color-surface-muted: #101010;
+  --color-surface-raised: #f5f5f5;
+  --color-surface-strong: #404040;
+
+  /* ===========================
+     TYPOGRAPHY
+  ============================ */
+  --font-primary: var(--font-gracela);
+  --font-body: var(--font-open-sans);
+
+  /* Font Sizes (SKILL.md scale: 9,11,12,13,14,15,17,20 px) */
+  --text-xs: 0.5625rem;
+  --text-sm: 0.6875rem;
+  --text-md: 0.75rem;
+  --text-lg: 0.8125rem;
+  --text-xl: 0.875rem;
+  --text-2xl: 0.9375rem;
+  --text-3xl: 1.0625rem;
+  --text-4xl: 1.25rem;
+
+  --font-size-base: 0.9375rem;
+  --font-weight-base: 400;
+  --line-height-base: 1.75rem;
+
+  /* ===========================
+     SPACING (SKILL.md scale)
+  ============================ */
+  --space-1: 1px;
+  --space-2: 3px;
+  --space-3: 5px;
+  --space-4: 6px;
+  --space-5: 10px;
+  --space-6: 12px;
+  --space-7: 15px;
+  --space-8: 20px;
+  --section-padding: 7rem;
+  --container-padding: 1.5rem;
+  --card-padding: 2rem;
+
+  /* ===========================
+     BORDER RADIUS (SKILL.md)
+  ============================ */
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+
+  /* ===========================
+     SHADOWS
+  ============================ */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
+
+  /* ===========================
+     TRANSITIONS (SKILL.md motion)
+  ============================ */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-instant: 150ms;
+  --duration-fast: 200ms;
+  --duration-normal: 250ms;
+  --duration-slow: 500ms;
+
+  /* ===========================
+     MAX WIDTH
+  ============================ */
+  --container-width: 1240px;
+}
+
+/* ===========================
+   BASE STYLES
+============================ */
+
+@layer utilities {
+  .rotate-x-180 {
+    transform: rotateX(180deg);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: var(--line-height-base);
+  letter-spacing: 0.02em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.4;
+}
+
+a {
+  font-family: var(--font-body);
+}
+
+.sectionClass {
+  padding-block: var(--section-padding);
+/* padding-top: 50px;
+padding-bottom: 100px; */
+}
+
+.container {
+  width: min(100% - 2rem, var(--container-width));
+  margin-inline: auto;
+}
+p{
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+  p {
+    font-size: 11px;
+  }
+}
+
+
+/* ===========================
+   BUTTON UTILITIES
+============================ */
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-4;
+  background: var(--color-primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent);
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center px-8 py-4;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ===========================
+   CARD UTILITY
+============================ */
+
+.card {
+  background: white;
+  border: 1px solid var(--color-border);
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===========================
+   IMAGE UTILITY
+============================ */
+
+.image-hover {
+  overflow: hidden;
+}
+
+.image-hover img {
+  transition: transform 0.8s ease;
+}
+
+.image-hover:hover img {
+  transform: scale(1.08);
+}
+
+
+/* background image */
+
+.imagebackground{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  z-index:0;
+  pointer-events:none;
+}
